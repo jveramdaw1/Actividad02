@@ -1,4 +1,4 @@
-package ende;
+package ende.juego;
 
 /**
  * Simula el juego de Piedra, Papel o tijera
