@@ -1,40 +1,40 @@
 package ende.jugador;
 
-class Jugador{
+public class Jugador{
 	
+	private String nombre;
 	private int exitos;      // numero de partidas ganadas
-	private int empates;
 	
-	public Jugador() {
+	public Jugador(String nombre) {
+		this.nombre = nombre;
 		this.exitos = 0;
-		this.empates = 0;
 	}
-
+	
+	public String getNombre() 
+    {
+        return this.nombre;
+    }
+	
     public int getExitos() 
     {
-        return exitos;
+        return this.exitos;
     }
     
-    public int getEmpates() 
+    public void setNombre(String nombre) 
     {
-        return empates;
+        this.nombre = nombre;
     }
     
     public void setExitos() 
     {
-        exitos ++;
-    }
-    
-    public void setEmpates() 
-    {
-        empates ++;
+        this.exitos ++;
     }
     
     /**
      * Escoge piedra, papel o tijera al azar
      */
 	
-    public String opcion_al_azar()
+    public String opcionAlAzar()
     {
         String opcion="";
         Integer c = (int)(Math.random()*3);
@@ -51,4 +51,11 @@ class Jugador{
         }
         return opcion;
     }
+
+	@Override
+	public String toString() {
+		return "\t" + this.nombre + " - Partidas ganadas -> " + this.exitos;
+	}
+    
+    
 }
